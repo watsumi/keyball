@@ -81,6 +81,20 @@ combo_t key_combos[] = {
 };
 #endif
 
+#ifdef TAP_DANCE_ENABLE
+enum {
+    TD_Q_ESC,
+};
+
+tap_dance_action_t tap_dance_actions[] = {
+    [TD_Q_ESC] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC),
+};
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    TD(TD_Q_ESC)
+};
+#endif
+
 #ifdef OLED_ENABLE
 
 #    include "lib/oledkit/oledkit.h"
