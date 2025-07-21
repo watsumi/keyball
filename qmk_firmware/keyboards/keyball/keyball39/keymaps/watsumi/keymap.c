@@ -24,6 +24,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #  include "dances.h"
 #endif
 
+#ifdef COMBO_ENABLE
+#  include "combo.h"
+#endif
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default (VIA)
@@ -77,17 +81,9 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 }
 
-#ifdef COMBO_ENABLE
-const uint16_t PROGMEM my_bs[] = {KC_Y, KC_H, COMBO_END};
-
-combo_t key_combos[] = {
-    COMBO(my_bs, KC_BSPC),
-};
-#endif
-
 #ifdef OLED_ENABLE
 
-#    include "lib/oledkit/oledkit.h"
+#  include "lib/oledkit/oledkit.h"
 
 void oledkit_render_info_user(void) {
     keyball_oled_render_keyinfo();
