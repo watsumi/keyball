@@ -39,7 +39,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 5
 
-#define KEYBALL_CPI_DEFAULT 1100 // マウス速度
+#define KEYBALL_CPI_DEFAULT 600 // マウス速度
 #define KEYBALL_SCROLL_DIV_DEFAULT 5 // スクロール速度
 
 #define TAP_CODE_DELAY 5
